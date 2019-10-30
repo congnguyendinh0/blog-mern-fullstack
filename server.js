@@ -6,7 +6,6 @@ const path = require("path");
 
 // connect database
 connectDB();
-app.get("/", (req, res) => res.send("API running"));
 
 // init middleware
 
@@ -18,7 +17,7 @@ app.use(
 
 app.use(
   cors({
-    allowedHeaders: ["x-auth-token"]
+    allowedHeaders: ["x-auth-token", "content-type"]
   })
 );
 
@@ -28,7 +27,7 @@ app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/profile", require("./routes/api/profile"));
 app.use("/api/posts", require("./routes/api/posts"));
 
-app.use(express.static(path.join(__dirname, "./client/build")));
+app.use(express.static(path.join(__dirname, "build")));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`server started on ${PORT}`));

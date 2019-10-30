@@ -13,8 +13,9 @@ const useStyles = makeStyles({
   }
 })
 
-export default function Register() {
+export default function Register(props) {
   const classes = useStyles()
+  const { configAuth } = props
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -34,6 +35,7 @@ export default function Register() {
       console.log(res);
       localStorage.setItem('token', res.data.token)
       setRedirect(true)
+      configAuth()
     }).catch(err => {
       console.log(err);
     })

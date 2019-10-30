@@ -61,9 +61,9 @@ const App = () => {
       <Navbar user={user}/>
       <Switch>
         <Route exact path="/" render={() => <Home user={user} setUser={setUser}/>} />
-        <Route path="/login" component={Login}/>
+        <Route path="/login" render={() => <Login configAuth={checkToken} />} />
         <Route path="/settings" component={Settings}/>
-        <Route path="/register" component={Register}/>
+        <Route path="/register" render={() => <Register configAuth={checkToken} />}/>
         <Route path="/newpost" component={Newpost}/>
         <Route path="/postcomment" component={Postcomment}/>
         <Route path="/posts/:id" render={({match}) => <Post id={match.params.id} user={user}/>}/>

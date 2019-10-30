@@ -11,8 +11,9 @@ const useStyles = makeStyles({
     }
 })
 
-export default function Login (){
+export default function Login (props){
   const classes = useStyles()
+  const { configAuth } = props
   const [ email, setEmail ] = useState('')
   const [ password, setPassword ] = useState('')
   const [log,setLogin]=useState('')
@@ -34,6 +35,7 @@ export default function Login (){
       console.log(res);
       localStorage.setItem('token', res.data.token)
       setLogin(true)
+      configAuth()
     }).catch(err => {
       console.log(err);
     })
