@@ -1,0 +1,6 @@
+{
+    "mongoURI": "mongodb+srv://dba:sql@blog-cdikn.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtToken": "mysecrettoken",
+    "githubClientId":"f1432e41874288912231",
+    "githubSecret":"40515107fb47af06f30d1b1e44b6b5be451a306d"
+}
