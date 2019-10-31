@@ -35,7 +35,7 @@ export default function Login(props) {
         configAuth();
         setTimeout(() => {
           setLogin(true);
-        }, 2000);
+        }, 1000);
       })
       .catch(err => {
         console.log(err);
