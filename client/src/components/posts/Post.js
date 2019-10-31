@@ -140,7 +140,7 @@ export default function Post(props) {
     <div>
       <Card>
         <CardHeader
-          avatar={<Avatar src={post.avatar} />}
+          avatar={<Avatar src={post.user.avatar} />}
           action={
             <div>
               <IconButton onClick={() => console.log("clicked")}>
@@ -150,7 +150,7 @@ export default function Post(props) {
             </div>
           }
           title={post.title}
-          subheader={<Link to={`/profile/${post.user}`}>{post.name}</Link>}
+          subheader={<Link to={`/profile/${post.user._id}`}>{post.name}</Link>}
         />
         <CardContent>
           <div dangerouslySetInnerHTML={createMarkup(post)}></div>
