@@ -17,7 +17,9 @@ app.use(
 
 app.use(
   cors({
-    allowedHeaders: ["x-auth-token", "content-type"]
+    preflightContinue: false,
+    origin: '*',
+    allowedHeaders: ["x-auth-token", "content-type","Access-Control-Allow-Headers", 'headers']
   })
 );
 
