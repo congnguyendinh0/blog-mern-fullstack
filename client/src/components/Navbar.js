@@ -12,6 +12,7 @@ const useStyles = makeStyles({
 const Navbar = (props) => {
     const { user, setUser } = props
     const classes = useStyles()
+    //logout
     const logout = ()=>{
         localStorage.removeItem('token')
         setTimeout(()=>{
